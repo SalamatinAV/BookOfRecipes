@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>{{ !data.name ? "Добавить" : "Обновить" }} категорию</h1>
+
+<form class="form" mat-dialog-content (ngSubmit)="onSubmit()" [formGroup]="categoryForm">
+  <app-input [form]="categoryForm" controlName="category" label="Название категории" #categoryName> </app-input>
+
+  <div mat-dialog-actions>
+    <button class="cancel" type="button" mat-raised-button mat-button mat-dialog-close>Отмена</button>
+
+    <button type="submit" mat-raised-button [disabled]="categoryForm.invalid" mat-button>
+      {{ !data.name ? "Добавить" : "Обновить" }}
+    </button>
+  </div>
+</form>

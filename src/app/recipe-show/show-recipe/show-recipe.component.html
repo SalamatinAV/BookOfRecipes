@@ -1,0 +1,39 @@
+<div class="container-bl">
+  <div class="routes-bl justify-between" *ngIf="recipe">
+    <div>
+      <a class="route-link-back" [routerLink]="['/home/categories']"> <mat-icon>keyboard_arrow_left</mat-icon> Категории</a>
+      <a class="route-link-back cursor-pointer" [routerLink]="['/home/recipes/', categoryName]"
+        ><mat-icon>keyboard_arrow_left</mat-icon> Рецепты</a
+      >
+    </div>
+    <div class="modern-recipe">
+      <mat-icon matTooltip="Редактировать рецепт" class="edit-icon" (click)="updateRecipe()">edit</mat-icon>
+      <mat-icon matTooltip="Удалить рецепт" class="delete-icon" (click)="deletRecipeDialog()">delete</mat-icon>
+    </div>
+  </div>
+
+  <div class="recipe-content">
+    <h1 class="common-bl title-ricipe" *ngIf="recipe.title">
+      {{ recipe.title | uppercase }}
+    </h1>
+
+    <div class="common-bl" *ngIf="ingredients.length > 0">
+      <h3 class="headers-name">Ингредиенты</h3>
+      <div class="ingredient-recipe-header">
+        <span>Ингредиент</span>
+        <span>Кол-во</span>
+      </div>
+      <div class="ingredient-recipe" *ngFor="let ingredient of ingredients">
+        <span>{{ ingredient.ingredient }}</span>
+        <span>{{ ingredient.quantity }}</span>
+      </div>
+    </div>
+
+    <div class="common-bl" *ngIf="recipe.instructions">
+      <h3 class="headers-name">Описание</h3>
+      <p class="pt-5">
+        {{ recipe.instructions }}
+      </p>
+    </div>
+  </div>
+</div>

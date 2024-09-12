@@ -1,0 +1,33 @@
+.mat-mdc-dialog-surface {
+  background-color: rgba(0, 0, 0, 0.43) !important;
+  align-items: center;
+  border: 1px solid rgb(255 255 255);
+  border-radius: 10px !important;
+  .mat-mdc-dialog-title {
+    color: white !important;
+  }
+}
+.mat-mdc-dialog-content > :last-child {
+  display: flex;
+  justify-content: center;
+}
+.cdk-overlay-dark-backdrop {
+  background: rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(8px);
+}
+
+.text {
+  text-align: center;
+  color: white;
+  margin: 10px 0;
+  font-size: 15px;
+}
+
+.cuastom-mat-icon.mat-icon {
+  height: 50px;
+  width: 50px;
+  font-size: 51px;
+}
+.mat-mdc-dialog-content > :last-child {
+  gap: 20px;
+}

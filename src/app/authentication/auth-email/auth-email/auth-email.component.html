@@ -1,0 +1,12 @@
+<div class="blura">
+  <div class="container">
+    <div class="priority">
+      <div class="log-reg">
+        <a class="log" [routerLink]="['/auth/login']" routerLinkActive="router-link-active">Вход</a>
+        <mat-icon class="gap"> restaurant </mat-icon>
+        <a class="reg" [routerLink]="['/auth/registration']" routerLinkActive="router-link-active">Регистрация</a>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

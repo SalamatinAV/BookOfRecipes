@@ -1,0 +1,116 @@
+.container-bl {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .content-card {
+    display: flex;
+
+    overflow: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    .category-cards {
+      position: relative;
+      flex: 0 0 calc(25% - 16px);
+      margin: 8px;
+      height: 8rem;
+      border-radius: 10px;
+      border: 1px solid white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      box-shadow: inset 0 0 10px #08d0dc;
+      cursor: pointer;
+      transition: 0.2s;
+      p {
+        text-align: center;
+        margin: 3px 0;
+        padding: 0 4px;
+        letter-spacing: 1px;
+      }
+    }
+
+    @media screen and (max-width: 1100px) {
+      .category-cards {
+        flex: 0 0 calc(33.33% - 16px);
+      }
+    }
+
+    @media screen and (max-width: 700px) {
+      .category-cards {
+        flex: 0 0 calc(50% - 16px);
+      }
+    }
+
+    @media screen and (max-width: 450px) {
+      .category-cards {
+        flex: 0 0 calc(100% - 16px);
+      }
+    }
+
+    @media screen and (min-width: 2500px) {
+      .category-cards {
+        flex: 0 0 calc(20% - 16px);
+        height: 11rem;
+      }
+    }
+
+    .category-cards:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.routes-bl {
+  margin: 5px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  .route-link-back {
+    display: inline-flex;
+    color: #0cd3dd;
+    transition: 0.5s;
+  }
+
+  .route-link-back:hover {
+    transform: scale(1.1);
+    color: #00f2ff;
+  }
+}
+
+.headers-name {
+  position: absolute;
+  top: -13px;
+  left: 30px;
+  background-color: #000000;
+  padding: 0 3px;
+  border: 1px solid;
+  border-radius: 5px;
+  color: darkgray;
+  letter-spacing: 2px;
+}
+
+.cancel.mat-mdc-raised-button:not(:disabled) {
+  background-color: rgb(255, 13, 13) !important;
+}
+
+.edit-icon {
+  color: rgb(204, 204, 3);
+  transition: 0.3s;
+}
+.edit-icon:hover {
+  transform: scale(1.2);
+}
+
+.delete-icon {
+  color: rgb(190, 4, 4);
+  transition: 0.3s;
+}
+.delete-icon:hover {
+  transform: scale(1.2);
+}
+
+.mat-mdc-form-field-error {
+  color: #ff5454 !important;
+  font-weight: 500;
+}

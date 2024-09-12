@@ -1,0 +1,13 @@
+*::-webkit-scrollbar {
+  width: 2px; /* ширина всей полосы прокрутки */
+}
+
+*::-webkit-scrollbar-track {
+  // background: rgba(56, 54, 54, 0); /* цвет зоны отслеживания */
+  // background: rgba(0, 0, 0, 0.76); /* цвет зоны отслеживания */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(220, 243, 9, 0); /* цвет бегунка */
+  border-radius: 10px; /* округлось бегунка */
+}

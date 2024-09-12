@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>
+  <mat-icon class="cuastom-mat-icon" style="color: yellow">warning</mat-icon>
+</h1>
+<div class="form" mat-dialog-content>
+  <p class="text">
+    Вы действительно хотите удалить
+    {{ data.header }} {{ getName() | uppercase }}? После подтверждения данные
+    будут окончательно удалены!
+  </p>
+  <div mat-dialog-actions>
+    <button
+      class="cancel cancellation"
+      mat-raised-button
+      mat-button
+      mat-dialog-close
+    >
+      Отмена
+    </button>
+    <button class="delete" mat-raised-button mat-button (click)="onDelete()">
+      Удалить
+    </button>
+  </div>
+</div>

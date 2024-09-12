@@ -1,0 +1,23 @@
+<form class="form-container" [formGroup]="formRegistration" (ngSubmit)="onSubmit()">
+  <div class="text-center m-[20px] w-[-webkit-fill-available] min-h-[20px]">
+    <mat-error *ngIf="errorEmail">{{ errorEmail }} </mat-error>
+  </div>
+
+  <div class="form">
+    <app-input [form]="formRegistration" controlName="email" label="Email"></app-input>
+
+    <app-input [form]="formRegistration" controlName="password" label="Пароль"></app-input>
+
+    <app-input [form]="formRegistration" controlName="checkPassword" label="Повторить пароль"></app-input>
+  </div>
+
+  <div class="text-center m-[10px] w-[-webkit-fill-available] h-[20px]">
+    <mat-error *ngIf="formRegistration.errors?.['passwordsMismatch'] && formRegistration.get('checkPassword')?.touched">
+      Пароли не совпадают
+    </mat-error>
+  </div>
+
+  <div class="btn">
+    <button type="submit" mat-raised-button color="primary" [disabled]="formRegistration.invalid">Регистрация</button>
+  </div>
+</form>

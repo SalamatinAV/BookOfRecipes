@@ -1,0 +1,21 @@
+.form {
+  margin-top: 10px;
+  width: -webkit-fill-available;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 500px) {
+  .form {
+    padding: 0 10px;
+  }
+
+  .mat-mdc-raised-button:not(:disabled) {
+    font-size: 11px;
+    letter-spacing: 0px;
+  }
+  .mat-mdc-raised-button[disabled],
+  .mat-mdc-raised-button.mat-mdc-button-disabled {
+    font-size: 11px;
+    letter-spacing: 0px;
+  }
+}

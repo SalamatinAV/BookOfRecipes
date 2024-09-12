@@ -1,0 +1,19 @@
+<div class="container-bl">
+  <h1 class="text-center" style="flex-shrink: 0">Категории</h1>
+  <div class="content-card">
+    <div class="category-cards bg-custom-green" (click)="openAddCategoryDialog()">
+      <p>Добавить категорию</p>
+      <mat-icon>add</mat-icon>
+    </div>
+
+    <div class="category-cards bg-black" *ngFor="let category of category" (click)="showRecipes(category.name)">
+      <p>{{ category.name | lowercase }}</p>
+      <div class="modernize">
+        <mat-icon matTooltip="Редактировать категорию" class="edit-icon" (click)="openAddCategoryDialog(category.name, category.id, $event)"
+          >edit</mat-icon
+        >
+        <mat-icon matTooltip="Удалить категорию" class="delete-icon" (click)="deleteCategoryDialog(category, $event)">delete</mat-icon>
+      </div>
+    </div>
+  </div>
+</div>

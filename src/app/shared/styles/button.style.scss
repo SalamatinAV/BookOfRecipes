@@ -1,0 +1,17 @@
+.mat-mdc-raised-button:not(:disabled) {
+  background-color: green !important;
+  color: white !important;
+
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+.mat-mdc-raised-button[disabled],
+.mat-mdc-raised-button.mat-mdc-button-disabled {
+  background-color: #414040 !important;
+  color: white !important;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+.mat-mdc-dialog-actions {
+  gap: 8px;
+}

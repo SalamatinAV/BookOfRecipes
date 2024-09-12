@@ -1,0 +1,23 @@
+<div class="container-bl" *ngIf="categoryName">
+  <div class="routes-bl">
+    <a class="route-link-back" [routerLink]="['/home/categories']"
+      ><mat-icon>keyboard_arrow_left</mat-icon> Категории</a
+    >
+  </div>
+
+  <h1 class="text-center">Рецепты категории: {{ categoryName | uppercase }}</h1>
+  <div class="content-card">
+    <div class="category-cards bg-custom-green" (click)="addRecipe()">
+      <p>Добавить рецепт</p>
+      <mat-icon>add</mat-icon>
+    </div>
+
+    <div
+      class="category-cards bg-black"
+      *ngFor="let recipe of recipes"
+      (click)="showRecipe(recipe)"
+    >
+      <p>{{ recipe.title | lowercase }}</p>
+    </div>
+  </div>
+</div>

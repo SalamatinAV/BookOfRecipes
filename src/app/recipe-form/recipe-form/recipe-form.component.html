@@ -1,0 +1,58 @@
+<div class="container-bl">
+  <h1>{{ !recipe ? "Добавить" : "Обновить" }} рецепт</h1>
+
+  <form class="form-recipe" [formGroup]="recipeForm">
+    <div class="zone">
+      <h3 class="headers-name">Название рецепта</h3>
+
+      <app-input [form]="recipeForm" controlName="title" label="Название рецепта" #titleInput></app-input>
+    </div>
+
+    <div class="zone no-error-bl">
+      <h3 class="headers-name">Ингредиенты</h3>
+      <form class="flex flex-col" [formGroup]="ingrediendsForm" (ngSubmit)="addIngrediends()">
+        <div class="flex gap-1 justify-center">
+          <app-input class="w-[50%]" [form]="ingrediendsForm" controlName="ingredient" label="Ингредиент" #ingredientInput></app-input>
+
+          <app-input class="w-[50%]" [form]="ingrediendsForm" controlName="quantity" label="кол-во"></app-input>
+        </div>
+        <div class="flex justify-center pb-2">
+          <button
+            class="add-ingredients-btn"
+            mat-raised-button
+            mat-buttontype="submit"
+            [disabled]="!ingrediendsForm.get('ingredient')?.value || !ingrediendsForm.get('quantity')?.value"
+          >
+            Добавить ингредиент
+          </button>
+        </div>
+      </form>
+
+      <div class="ingredients-list" #ingredientsList>
+        <div class="ingredient" *ngFor="let ingredient of ingredients; let i = index">
+          <p class="ingredient-name">
+            <span>
+              {{ ingredient.ingredient }}
+            </span>
+            <span>{{ ingredient.quantity }}</span>
+          </p>
+          <mat-icon class="edit-icon" (click)="updateIngrediend(ingredient, i)">edit</mat-icon>
+          <mat-icon class="delete-icon" (click)="deleteIngrediend(ingredient)">delete</mat-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="zone">
+      <h3 class="headers-name">Описание</h3>
+      <app-textarea [form]="recipeForm" controlName="instructions" label="Процесс приготовления" rows="5" resize="none"></app-textarea>
+    </div>
+  </form>
+
+  <div class="flex justify-center gap-4 m-[10px]">
+    <button class="cancel" mat-raised-button mat-button (click)="previousRoute(categoryName, recipe?.title)">Отмена</button>
+
+    <button mat-raised-button mat-button [disabled]="recipeForm.invalid" (click)="addOrUpdateRecipe()">
+      {{ !recipe ? "Добавить" : "Обновить" }}
+    </button>
+  </div>
+</div>

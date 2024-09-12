@@ -1,0 +1,20 @@
+<div class="main-container">
+  <header class="header">
+    <div class="flex items-center">
+      <span class="font-text">Книга</span>
+      <div class="w-[65px]">
+        <img src="/assets/img/pngwing.com.png" alt="" />
+      </div>
+      <span class="font-text">рецептов</span>
+    </div>
+
+    <div class="flex items-center justify-end">
+      <mat-icon class="exit" (click)="logout()" matTooltip="Выйти"
+        >logout</mat-icon
+      >
+    </div>
+  </header>
+  <div class="overflow-hidden h-[100%] p-[10px]">
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>
+  <mat-icon class="cuastom-mat-icon" style="color: yellow">warning</mat-icon>
+</h1>
+<div class="form" mat-dialog-content>
+  <p class="text">
+    Категория {{ data.name | uppercase }} не может быть удалена, так как в ней
+    есть рецепты
+  </p>
+  <div mat-dialog-actions>
+    <button class="cancellation" mat-raised-button mat-button mat-dialog-close>
+      Отмена
+    </button>
+  </div>
+</div>

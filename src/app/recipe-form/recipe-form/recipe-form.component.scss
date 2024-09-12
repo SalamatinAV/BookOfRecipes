@@ -1,0 +1,79 @@
+.form-recipe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+  padding-top: 15px;
+}
+
+.zone {
+  position: relative;
+  padding: 8px 60px;
+  background-color: rgba(0, 0, 0, 0.43);
+  width: 80%;
+  margin-bottom: 35px;
+
+  mat-form-field,
+  app-input,
+  app-textarea {
+    // width: -webkit-fill-available;
+    margin-top: 20px;
+  }
+}
+
+.ingredients-list,
+.zone {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+.ingredients-list {
+  max-height: 165px;
+  min-height: 90px;
+  background-color: #00000070;
+  overflow: auto;
+
+  .ingredient {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 4px;
+    padding: 0 5px;
+    border-bottom: 1px solid orange;
+
+    .ingredient-name {
+      flex-grow: 1;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+
+      span {
+        width: 50%;
+        padding: 0 5px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: center;
+      }
+    }
+  }
+}
+
+:host::ng-deep {
+  .add-ingredients-btn.mat-mdc-button-base {
+    text-decoration: none;
+    height: 30px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .zone {
+    padding: 8px 6px;
+    width: 100%;
+  }
+
+  .ingredients-list {
+    max-height: 260px;
+  }
+}

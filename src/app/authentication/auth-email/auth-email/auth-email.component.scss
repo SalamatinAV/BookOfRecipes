@@ -1,0 +1,46 @@
+.blura {
+  height: 100%;
+  backdrop-filter: blur(15px);
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  color: white;
+  letter-spacing: 2px;
+  padding: 10px;
+  .container {
+    width: 550px;
+    margin-top: 10vw;
+    height: fit-content;
+    background-color: rgb(0 0 0 / 76%);
+    border-radius: 10px;
+    border: 2px solid white;
+
+    .priority {
+      display: flex;
+      justify-content: center;
+      .log-reg {
+        display: flex;
+        margin: 20px 0px 0 0;
+        font-size: 20px;
+        cursor: pointer;
+        .gap {
+          margin: 0 15px;
+          color: orange;
+        }
+        .log,
+        .reg {
+          transition: 0.2s;
+        }
+        .log:not(.focus):hover,
+        .reg:not(.focus):hover {
+          transform: scale(1.08);
+          //  color: #00f3ff;
+        }
+      }
+    }
+  }
+}
+.router-link-active {
+  transform: scale(1.08);
+  color: #00ff37;
+}

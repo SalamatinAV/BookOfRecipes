@@ -1,0 +1,19 @@
+<form class="form-container" [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+  <div class="text-center m-[20px] w-[-webkit-fill-available] min-h-[20px]">
+    <mat-error>{{ errorEmail }} </mat-error>
+  </div>
+
+  <div class="form">
+    <app-input [form]="formLogin" controlName="email" label="Email"></app-input>
+
+    <app-input [form]="formLogin" controlName="password" label="Пароль" [showBtn]="true"></app-input>
+  </div>
+
+  <div class="flex flex-col items-center">
+    <p (click)="recoverPassword()">Забыли пароль?</p>
+  </div>
+
+  <div class="btn">
+    <button type="submit" mat-raised-button color="primary" [disabled]="formLogin.invalid">Войти</button>
+  </div>
+</form>
