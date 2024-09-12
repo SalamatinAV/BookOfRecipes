@@ -46,6 +46,7 @@ $book-of-recipes-theme: mat.define-theme(
 @import "app/shared/styles/dialog.style";
 @import "app/shared/styles/scroll.style.scss";
 @import "app/shared/styles/button.style.scss";
+@import "app/shared/styles/form.style.scss";
 
 body {
   position: absolute;
@@ -72,6 +73,6 @@ body {
 }
 
 h1 {
-  font-size: x-large;
+  font-size: large;
   text-align: center;
 }

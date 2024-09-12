@@ -1,13 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-// import { InputComponent } from '../../../shared/components/material/input/input.component';
 import { NgFor, NgIf } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
-// import { phoneValidator } from '../../../shared/validators/phone.validator';
-// import { emailValidator } from '../../../shared/validators/email.validator';
-// import { AuthService } from '../../../shared/services/auth.service';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { InputComponent } from '../../../../shared/components/material/input/input.component';
 import { AuthService } from '../../../../shared/services/auth.service';
 import { emailValidator } from '../../../../shared/validators/email.validator';
@@ -20,8 +16,8 @@ import { emailValidator } from '../../../../shared/validators/email.validator';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent implements OnInit {
-  formLogin!: FormGroup;
-  errorEmail: string = '';
+  public formLogin!: FormGroup;
+  public errorEmail: string = '';
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -44,14 +40,14 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  onSubmit() {
+  public onSubmit() {
     const emailAndPhone = this.formLogin.get('email')?.value;
     const password = this.formLogin.get('password')?.value;
 
     this.login(emailAndPhone, password);
   }
 
-  recoverPassword(): void {
+  public recoverPassword(): void {
     this.router.navigate(['auth/recoverPassword']);
   }
 }

@@ -79,7 +79,7 @@ export class RecipeFormComponent implements OnInit, AfterViewInit {
     this.cdr.detectChanges();
   }
 
-  public addIngrediends() {
+  public addIngrediends(): void {
     if (this.ingrediendsForm.get('ingredient')?.value.trim() && this.ingrediendsForm.get('quantity')?.value.trim()) {
       if (this.editedIngredientIndex !== null) {
         this.ingredients[this.editedIngredientIndex] = this.recipeForm.get('ingredients')?.value;
@@ -100,7 +100,7 @@ export class RecipeFormComponent implements OnInit, AfterViewInit {
     this.ingredients = this.ingredients.filter((value) => value !== ingredient);
   }
 
-  public updateIngrediend(ingredient: Ingrediends, idx: number) {
+  public updateIngrediend(ingredient: Ingrediends, idx: number): void {
     this.ingrediendsForm.get('ingredient')?.setValue(ingredient.ingredient);
     this.ingrediendsForm.get('quantity')?.setValue(ingredient.quantity);
     this.editedIngredientIndex = idx;

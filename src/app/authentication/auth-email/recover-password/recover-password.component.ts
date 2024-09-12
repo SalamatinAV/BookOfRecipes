@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
   styleUrl: './recover-password.component.scss',
 })
 export class RecoverPasswordComponent implements OnInit {
-  formRecoverPassword!: FormGroup;
+  public formRecoverPassword!: FormGroup;
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -25,7 +25,7 @@ export class RecoverPasswordComponent implements OnInit {
     });
   }
 
-  onSubmit(): void {
+  public onSubmit(): void {
     const email = this.formRecoverPassword.get('email')?.value;
 
     if (this.formRecoverPassword.valid) {

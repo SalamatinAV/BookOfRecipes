@@ -16,8 +16,8 @@ import { passwordMatchValidator } from '../../../shared/validators/password-matc
   styleUrl: './registrition.component.scss',
 })
 export class RegistritionComponent {
-  formRegistration!: FormGroup;
-  errorEmail: string = '';
+  public formRegistration!: FormGroup;
+  public errorEmail: string = '';
 
   constructor(private authService: AuthService) {}
 
@@ -45,7 +45,7 @@ export class RegistritionComponent {
     });
   }
 
-  onSubmit() {
+  public onSubmit(): void {
     const email = this.formRegistration.get('email')?.value;
     const password = this.formRegistration.get('password')?.value;
     if (this.formRegistration.valid) this.registration(email, password);

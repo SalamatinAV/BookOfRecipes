@@ -2,7 +2,7 @@ import { NgStyle } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInput, MatInputModule } from '@angular/material/input';
+import { MatInput } from '@angular/material/input';
 
 @Component({
   selector: 'app-textarea',

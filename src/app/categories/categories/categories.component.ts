@@ -34,7 +34,7 @@ export class CategoriesComponent implements OnInit {
     this.loadCategories();
   }
 
-  public openAddCategoryDialog(name?: string, id?: string, ev?: Event) {
+  public openAddCategoryDialog(name?: string, id?: string, ev?: Event): void {
     ev?.stopPropagation();
     const dialofRef = this.dialog.open(AddCategoryDialogComponent, {
       data: { name: name, id: id },
@@ -44,7 +44,7 @@ export class CategoriesComponent implements OnInit {
     });
   }
 
-  public deleteCategoryDialog(category: Category, ev: Event) {
+  public deleteCategoryDialog(category: Category, ev: Event): void {
     ev.stopPropagation();
 
     const dialogRef = this.dialog.open(DeleteDialogComponent, {
@@ -71,13 +71,13 @@ export class CategoriesComponent implements OnInit {
     if (category) this.categoryService.deleteCategory(category).subscribe(() => this.loadCategories());
   }
 
-  private loadCategories() {
+  private loadCategories(): void {
     this.categoryService.getCategories().subscribe((category) => {
       this.category = category.sort((a, b) => a.name.localeCompare(b.name));
     });
   }
 
-  private errorMassageDialog(name: string) {
+  private errorMassageDialog(name: string): void {
     this.dialog.open(ErrorMessageDialogComponent, {
       data: { name: name },
     });

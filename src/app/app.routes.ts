@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { LayoutComponent } from './layout/layout/layout.component';
-// import { AuthComponent } from './auth/auth/auth.component';
 import { CategoriesComponent } from './categories/categories/categories.component';
 import { RecipesComponent } from './recipes/recipes/recipes.component';
 import { RecipeFormComponent } from './recipe-form/recipe-form/recipe-form.component';
@@ -13,7 +12,6 @@ import { AuthEmailComponent } from './authentication/auth-email/auth-email/auth-
 import { LoginComponent } from './authentication/auth-email/login/login/login.component';
 
 export const routes: Routes = [
-  // { path: 'auth', component: AuthComponent },
   {
     path: 'auth',
     component: AuthEmailComponent,
